@@ -1,6 +1,6 @@
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from Recipe import Recipe
+from recipe import Recipe
 from langchain_openai import AzureChatOpenAI
     
 output_parser = PydanticOutputParser(pydantic_object=Recipe)
