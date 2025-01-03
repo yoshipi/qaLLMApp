@@ -13,15 +13,17 @@ class Recipe(BaseModel):
 
 prompt = ChatPromptTemplate.from_messages(
     [
-        ("system","ユーザーが入力した料理のレシピを考えてください。"),
-        ("human","{dish}"),
+        ("system", "ユーザーが入力した料理のレシピを考えてください。"),
+        ("human", "{dish}"),
     ]
 )
 
-model =AzureChatOpenAI(azure_deployment="gpt-4o", openai_api_version="2024-08-01-preview")
+model = AzureChatOpenAI(
+    azure_deployment="gpt-4o", openai_api_version="2024-08-01-preview"
+)
 
 chain = prompt | model.with_structured_output(recipe)
-recipe = chain.invoke({"dish":"カレー"})
+recipe = chain.invoke({"dish": "カレー"})
 print("with_structured_output")
 print(type(recipe))
 print(recipe)
@@ -30,12 +32,19 @@ output_parser = PydanticOutputParser(pydantic_object=Recipe)
 format_instructions = output_parser.get_format_instructions()
 
 prompt = ChatPromptTemplate.from_messages(
-    [("system", "ユーザーが入力した料理のレシピを考えてください。¥n¥n"
-     "{format_instructions}"),
-     ("human","{dish}")]
+    [
+        (
+            "system",
+            "ユーザーが入力した料理のレシピを考えてください。¥n¥n"
+            "{format_instructions}",
+        ),
+        ("human", "{dish}"),
+    ]
 )
 
-prompt_with_format_instructions = prompt.partial(format_instructions=format_instructions)
+prompt_with_format_instructions = prompt.partial(
+    format_instructions=format_instructions
+)
 prompt_value = prompt_with_format_instructions.invoke({"dish": "カレー"})
 
 print("PydanticOutputParser")

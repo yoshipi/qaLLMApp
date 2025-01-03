@@ -6,7 +6,11 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 system_template = "Translate the following from English into {language}"
 prompt_template = ChatPromptTemplate.from_messages(
-    [("system", system_template), MessagesPlaceholder("chat_history",optional=True),("user", "{text}")]
+    [
+        ("system", system_template),
+        MessagesPlaceholder("chat_history", optional=True),
+        ("user", "{text}"),
+    ]
 )
 
 model = AzureChatOpenAI(
