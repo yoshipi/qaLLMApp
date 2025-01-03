@@ -11,6 +11,7 @@ pip install langchain-community
 pip install GitPython
 pip install langchain-text-splitters
 pip install langgraph
+pip install langchain-chroma
 ```
 
 ### environment variables
