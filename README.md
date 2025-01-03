@@ -7,6 +7,7 @@ Study LangChain
 
 ```shell
 pip install langchain
+pip install langchain-openai
 pip install langchain-community
 pip install GitPython
 pip install langchain-text-splitters
