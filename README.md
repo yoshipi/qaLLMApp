@@ -25,4 +25,8 @@ vim ~/.zshrc
 export AZURE_OPENAI_ENDPOINT = Your environment endpoint
 export AZURE_OPENAI_API_KEY = Your environment apiKey
 export COHERE_API_KEY = Your cohere apiKey
+export LANGSMITH_TRACING=true
+export LANGSMITH_ENDPOINT=Your environment endpoint
+export LANGSMITH_API_KEY=Your langsmith api key
+export LANGSMITH_PROJECT=YOur project
 ```
