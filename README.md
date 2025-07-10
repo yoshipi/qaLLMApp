@@ -1,9 +1,38 @@
 # qaLLMApp
-Study LangChain
+Study LangChain - Comprehensive AI Application Showcase
+
+## あなたは何ができる？ (What can you do?)
+
+This repository demonstrates advanced AI applications built with LangChain and LangGraph, featuring:
+
+🤖 **Multi-Role Q&A System** - Intelligent role selection with quality assurance  
+🔍 **RAG (Retrieval Augmented Generation)** - Advanced document retrieval and generation  
+✨ **Intelligent Prompt Generation** - Interactive prompt optimization system  
+📋 **Requirements Gathering AI** - Automated stakeholder interview agent  
+💬 **Conversational AI Chatbots** - State-based conversation management  
+⚡ **Code Generation Agents** - AI-powered code analysis and generation  
+🎯 **Specialized AI Agents** - Domain-specific problem-solving agents  
+
+## Quick Start
+
+**Explore all capabilities interactively:**
+```bash
+python capabilities_showcase.py
+```
 
 ## How to setUp
 
-### pip install
+### Quick Demo (No Setup Required)
+```bash
+# Run the capabilities showcase to see what this app can do
+python capabilities_showcase.py
+# OR use the launcher
+python run_showcase.py
+```
+
+### Full Setup for Development
+
+#### pip install
 
 ```shell
 pip install langchain
@@ -29,4 +58,38 @@ export LANGSMITH_TRACING=true
 export LANGSMITH_ENDPOINT=Your environment endpoint
 export LANGSMITH_API_KEY=Your langsmith api key
 export LANGSMITH_PROJECT=YOur project
+```
+
+## Individual Applications
+
+After setup, you can run specific applications:
+
+### 🤖 Multi-Role Q&A System
+```bash
+python sample/qaTest.py
+# Ask questions in Japanese or English - the AI will select the appropriate expert role
+```
+
+### 🔍 RAG Document Query
+```bash
+python sample/langchain_tutorial/rag.py
+# Query LangChain documentation using retrieval-augmented generation
+```
+
+### ✨ Interactive Prompt Generation
+```bash
+python reverseCodeToDocument.py
+# Create optimized prompts through guided conversation
+```
+
+### 📋 Requirements Gathering
+```bash
+python sample/requirementTest.py
+# AI-driven stakeholder interview and requirement analysis
+```
+
+### 💬 Basic Chatbot
+```bash
+python sample/langgraph_tutorial/basicChatBot.py
+# Simple conversational AI with state management
 ```
